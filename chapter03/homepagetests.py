@@ -35,8 +35,7 @@ class HomePageTest(unittest.TestCase):
 
     def test_account_links(self):
         # get the all the links with Account text in it
-        account_links = self.driver.\
-            find_elements_by_partial_link_text('ACCOUNT')
+        account_links = self.driver.find_elements_by_partial_link_text('ACCOUNT')
 
         # check Account and My Account link is displayed/visible in the Home page footer
         self.assertTrue(len(account_links), 2)
@@ -53,8 +52,7 @@ class HomePageTest(unittest.TestCase):
 
     def test_vip_promo(self):
         # get vip promo image
-        vip_promo = self.driver.\
-            find_element_by_xpath("//img[@alt='Shop Private Sales - Members Only']")
+        vip_promo = self.driver.find_element_by_xpath("//img[@alt='Shop Private Sales - Members Only']")
 
         # check vip promo logo is displayed on home page
         self.assertTrue(vip_promo.is_displayed())
@@ -66,18 +64,15 @@ class HomePageTest(unittest.TestCase):
     def test_shopping_cart_status(self):
         # check content of My Shopping Cart block on Home page
         # get the Shopping cart icon and click to open the Shopping Cart section
-        shopping_cart_icon = self.driver.\
-            find_element_by_css_selector('div.header-minicart span.icon')
+        shopping_cart_icon = self.driver.find_element_by_css_selector('div.header-minicart span.icon')
         shopping_cart_icon.click()
 
         # get the shopping cart status
-        shopping_cart_status = self.driver.\
-            find_element_by_css_selector('p.empty').text
+        shopping_cart_status = self.driver.find_element_by_css_selector('p.empty').text
         self.assertEqual('You have no items in your shopping cart.',
                           shopping_cart_status)
         # close the shopping cart section
-        close_button = self.driver.\
-            find_element_by_css_selector('div.minicart-wrapper a.close')
+        close_button = self.driver.find_element_by_css_selector('div.minicart-wrapper a.close')
         close_button.click()
 
     @classmethod
