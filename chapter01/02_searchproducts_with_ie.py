@@ -2,6 +2,10 @@ import os
 from selenium import webdriver
 
 # get the path of IEDriverServer
+"""
+运行脚本后，Selenium 会加载 InternetExplorerDriver 服务，用它来启动浏览器和执行脚本。
+InternetExplorerDriver 服务在 Selenium 脚本和浏览器之间扮演类似中介角色。
+"""
 dir = os.getcwd()
 ie_driver_path = dir + '\IEDriverServer.exe'
 
